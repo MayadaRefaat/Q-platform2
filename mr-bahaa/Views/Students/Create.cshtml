@@ -1,0 +1,70 @@
+﻿@model mr_bahaa.Models.Student
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center ">
+                    <h2 class="text-center card-header">Create Student</h2>
+                </div>
+                <hr />
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal pl-5">
+
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.studentname, htmlAttributes: new { @class = "control-label " })
+                            <div>
+                                @Html.EditorFor(model => model.studentname, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.studentname, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label " })
+                            <div>
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.school, htmlAttributes: new { @class = "control-label " })
+                            <div>
+                                @Html.EditorFor(model => model.school, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.school, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                      
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btnCreate" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="pr-5">
+                    @Html.ActionLink("Back to List", "Index", "students", new { @class = "btn btnBackTolist" })
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }

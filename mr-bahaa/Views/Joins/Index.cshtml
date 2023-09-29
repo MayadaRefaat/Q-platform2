@@ -1,0 +1,111 @@
+﻿@model IEnumerable<mr_bahaa.Models.Joins>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 5px;
+    }
+</style>
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto  ">
+            <div class="card  my-5 shadow-lg p-md-3 mb-5 bg-white rounded">
+                <div class="p-md-5 ">
+
+                    <p class="p-5">
+                        @Html.ActionLink("Create New", "Create", "students", new { @class = "btn success" })
+                    </p>
+
+                    <div class="justify-content-center card-body table-responsive">
+                        <table id="myTable" class="table table-bordered  " style="width:100%">
+                            <thead class="thead-dark ">
+                                <tr class="cell-breakAll" style="font-size:12px">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.subjectcoure.name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Student.studentname)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Student.school)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Student.PhoneNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Student.secPhoneNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.apporved)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.subjectcoure.name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Student.studentname)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Student.school)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Student.PhoneNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Student.secPhoneNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.apporved)
+                                        </td>
+                                        <td>
+
+                                            @Html.ActionLink("Edit", "Edit", "joins", new { Id = item.Joinsid }, new { @class = "btn warning" })
+
+
+
+                                            
+                                            @Html.ActionLink("courses", "courses", "students", new { id = item.Studentid }, new { @class = "btn info" })
+
+
+                                          
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/datatabels/DataTables-1.10.20/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript">
+
+                                $(document).ready(function () {
+                                    $('#myTable').dataTable();
+                                });
+
+    </script>
+}

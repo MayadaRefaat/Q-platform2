@@ -1,0 +1,184 @@
+﻿@model mr_bahaa.viewmodel.lectureviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+   
+</style>
+<div class="container pt-5">
+    <div class="row   testtest">
+        <div class="col-md-4">
+            <div class="card shadow p-3 mb-2 bg-white rounded" style="justify-content:center">
+                <div>
+
+                    <h5 class="pt-3 text-center">Lecture : @Html.DisplayFor(model => model.lecture.name)</h5>
+                </div>
+
+                <h5 class="pt-3 text-center"> Lecture's Date :  @Html.DisplayFor(model => model.lecture.date)</h5>
+            </div>
+            <div class="shadow p-3 mb-2 bg-white rounded">
+                <div class="pb-2">
+                    @Html.ActionLink("Edit", "Edit", "lectures", new { id = Model.lecture.lectureid }, new { @class = "btn btn-block  btnprimary", @style = "background-color:green" })
+                </div>
+                @Html.ActionLink("Back to Lectures", "Index", "lectures", new { @class = "btn btn-block  btnprimary", @style = "background-color:gray" })
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h3 class="card-header text-center">
+                Explanation
+            </h3>
+            <div class="card shadow p-3 mb-4 bg-white rounded">
+                <div class="panel panel-default text-left">
+                    <div class="panel-body" style="width:100%">
+
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow p-3 mb-4 bg-white rounded">
+                <div class="panel panel-default text-left">
+                    <div class="panel-body">
+                        <div>
+                            @{ int count = 0; int xc = 0; }
+
+                            <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+                                <div class="carousel-inner" role="listbox">
+                                    @{int i = 0;}
+                                    @foreach (var x in Model.img)
+                                    {
+
+
+                                        i++;
+                                        var active = i == 1 ? "active" : "";
+                                        <div class="carousel-item @active">
+                                            <img src="@Html.DisplayFor(modelItem =>x.photoUrl)" alt="" class=" myImg" style="width:100%" height="400px" id=@xc onClick="call(@xc)">
+                                        </div>
+
+                                        <div id="myModal" class="modal">
+                                            <span class="close">&times;</span>
+                                            <img class="modal-content" id="img01">
+                                            <div id="caption"></div>
+                                        </div>
+                                        xc++;
+                                    }
+                                </div>
+
+
+                                <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            @foreach (var x in Model.vid)
+                            {
+                            <video style="width:100%; height:400px" controls>
+                                <source src="@Html.DisplayFor(modelItem => x.photoUrl)" type="video/ogg">
+                                <source src="@Html.DisplayFor(modelItem => x.photoUrl)" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            }
+                            @foreach (var x in Model.iframe)
+                            {
+                                <iframe src="@x" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                            }
+                            @foreach (var x in Model.aud)
+                            {
+                                <audio controls preload="none">
+                                    <source src="@Html.DisplayFor(modelItem => x.photoUrl)" type="audio/ogg" style="width:100%" height="400px">
+                                    <source src="@Html.DisplayFor(modelItem => x.photoUrl)" type="audio/mpeg" style="width:100%" height="400px">
+                                    <source src="@Html.DisplayFor(modelItem => x.photoUrl)" type="audio/wav" style="width:100%" height="400px">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            }
+                            <div>
+                                @foreach (var x in Model.pdf)
+                                {
+
+                                    <a href="@Html.DisplayFor(modelItem => x.photoUrl)" download=""><img src="~/Images/mrbahaa/pdf.png" width="50px" alt="Alternate Text" /> </a>
+                                }
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var diiiv = document.getElementsByClassName("card shadow p-3 mb-4 bg-white rounded");
+    diiiv.style.display = "none";  
+
+
+    var call = function (elementId) {
+        var modal = document.getElementById('myModal');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById(elementId);
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+
+
+    
+    
+
+
+    setInterval(document.getElementsByClassName("ytp-chrome-top-buttons")[0].style.display = 'none', 3000);
+
+    setTimeout(() => {
+        let yt = document.getElementsByClassName('ytp-chrome-top-buttons')[0];
+        console.log(yt);
+        yt.setAttribute("style", "display: none!important");
+    }, 3000)
+
+
+
+    setTimeout(() => {
+        let yt = document.getElementsByClassName('ytp-button')[0];
+        console.log(yt);
+        yt.setAttribute("style", "display: none!important");
+    }, 3000)
+    
+   
+
+</script>
+            </div>
+<p>
+
+</p>

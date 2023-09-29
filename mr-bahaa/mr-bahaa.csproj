@@ -1,0 +1,1231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08F7BFE9-194C-46E5-8C0A-84183A590D52}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mr_bahaa</RootNamespace>
+    <AssemblyName>mr-bahaa</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\adminController.cs" />
+    <Compile Include="Controllers\codesController.cs" />
+    <Compile Include="Controllers\coursescategoriesController.cs" />
+    <Compile Include="Controllers\examsController.cs" />
+    <Compile Include="Controllers\forgetpassesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\homeworkController.cs" />
+    <Compile Include="Controllers\JoinsController.cs" />
+    <Compile Include="Controllers\lecturelocksController.cs" />
+    <Compile Include="Controllers\lecturesController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\onelecturesController.cs" />
+    <Compile Include="Controllers\questionsController.cs" />
+    <Compile Include="Controllers\rolesController.cs" />
+    <Compile Include="Controllers\studentipsController.cs" />
+    <Compile Include="Controllers\studentquestionsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\subjectcouresController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207231042581_first.cs" />
+    <Compile Include="Migrations\202207231042581_first.Designer.cs">
+      <DependentUpon>202207231042581_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207260126012_studentquestion.cs" />
+    <Compile Include="Migrations\202207260126012_studentquestion.Designer.cs">
+      <DependentUpon>202207260126012_studentquestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207260131144_studentquestionn.cs" />
+    <Compile Include="Migrations\202207260131144_studentquestionn.Designer.cs">
+      <DependentUpon>202207260131144_studentquestionn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207260132066_studentquestionnn.cs" />
+    <Compile Include="Migrations\202207260132066_studentquestionnn.Designer.cs">
+      <DependentUpon>202207260132066_studentquestionnn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208041514149_lecturelock.cs" />
+    <Compile Include="Migrations\202208041514149_lecturelock.Designer.cs">
+      <DependentUpon>202208041514149_lecturelock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209132227138_studentip.cs" />
+    <Compile Include="Migrations\202209132227138_studentip.Designer.cs">
+      <DependentUpon>202209132227138_studentip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209140245099_onelectures.cs" />
+    <Compile Include="Migrations\202209140245099_onelectures.Designer.cs">
+      <DependentUpon>202209140245099_onelectures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209140256305_codes.cs" />
+    <Compile Include="Migrations\202209140256305_codes.Designer.cs">
+      <DependentUpon>202209140256305_codes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209140310115_code.cs" />
+    <Compile Include="Migrations\202209140310115_code.Designer.cs">
+      <DependentUpon>202209140310115_code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209151727134_examhome.cs" />
+    <Compile Include="Migrations\202209151727134_examhome.Designer.cs">
+      <DependentUpon>202209151727134_examhome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209181523492_homework.cs" />
+    <Compile Include="Migrations\202209181523492_homework.Designer.cs">
+      <DependentUpon>202209181523492_homework.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209181530024_homeworks.cs" />
+    <Compile Include="Migrations\202209181530024_homeworks.Designer.cs">
+      <DependentUpon>202209181530024_homeworks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309262136055_new.cs" />
+    <Compile Include="Migrations\202309262136055_new.Designer.cs">
+      <DependentUpon>202309262136055_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Absence.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\codes.cs" />
+    <Compile Include="Models\control.cs" />
+    <Compile Include="Models\course.cs" />
+    <Compile Include="Models\coursescategories.cs" />
+    <Compile Include="Models\eqscore.cs" />
+    <Compile Include="Models\equestionimg.cs" />
+    <Compile Include="Models\essayexam.cs" />
+    <Compile Include="Models\Essayquestion.cs" />
+    <Compile Include="Models\exam.cs" />
+    <Compile Include="Models\examscore.cs" />
+    <Compile Include="Models\examtime.cs" />
+    <Compile Include="Models\examviewcontrol.cs" />
+    <Compile Include="Models\forgetpass.cs" />
+    <Compile Include="Models\homework.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\img.cs" />
+    <Compile Include="Models\imghomework.cs" />
+    <Compile Include="Models\Joins.cs" />
+    <Compile Include="Models\lecture.cs" />
+    <Compile Include="Models\lecturecontrolview.cs" />
+    <Compile Include="Models\lecturehomework.cs" />
+    <Compile Include="Models\lecturelock.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\onelecture.cs" />
+    <Compile Include="Models\payment.cs" />
+    <Compile Include="Models\photo.cs" />
+    <Compile Include="Models\photolec.cs" />
+    <Compile Include="Models\qcontrol.cs" />
+    <Compile Include="Models\quese score.cs" />
+    <Compile Include="Models\questions.cs" />
+    <Compile Include="Models\replayphotos.cs" />
+    <Compile Include="Models\role.cs" />
+    <Compile Include="Models\score.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\studentip.cs" />
+    <Compile Include="Models\studentquestions.cs" />
+    <Compile Include="Models\studnetquestionphoto.cs" />
+    <Compile Include="Models\subjectcoure.cs" />
+    <Compile Include="Models\subjectcoureimg.cs" />
+    <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\teacherimg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="viewmodel\absenseviewmodel.cs" />
+    <Compile Include="viewmodel\adminviewmodel.cs" />
+    <Compile Include="viewmodel\attendancecours.cs" />
+    <Compile Include="viewmodel\categoriesviewmodel.cs" />
+    <Compile Include="viewmodel\Class1.cs" />
+    <Compile Include="viewmodel\corrviewmodel.cs" />
+    <Compile Include="viewmodel\coursereport.cs" />
+    <Compile Include="viewmodel\emyquesviewmodel.cs" />
+    <Compile Include="viewmodel\eqcor.cs" />
+    <Compile Include="viewmodel\eqviewmodel.cs" />
+    <Compile Include="viewmodel\courseviewmodel.cs" />
+    <Compile Include="viewmodel\essayexamviewmodel.cs" />
+    <Compile Include="viewmodel\evluateview.cs" />
+    <Compile Include="viewmodel\examviewmodel.cs" />
+    <Compile Include="viewmodel\ggogleformviewmodel.cs" />
+    <Compile Include="viewmodel\homeviewmodel.cs" />
+    <Compile Include="viewmodel\homeworkviewmodel.cs" />
+    <Compile Include="viewmodel\leccourse.cs" />
+    <Compile Include="viewmodel\lecexam.cs" />
+    <Compile Include="viewmodel\lectureviewmodel.cs" />
+    <Compile Include="viewmodel\locksviewmodel.cs" />
+    <Compile Include="viewmodel\onelectureimage.cs" />
+    <Compile Include="viewmodel\onelectureviewmodel.cs" />
+    <Compile Include="viewmodel\qeustioncheakpoint.cs" />
+    <Compile Include="viewmodel\quesscore.cs" />
+    <Compile Include="viewmodel\questionviewmodel.cs" />
+    <Compile Include="viewmodel\qviewmodel.cs" />
+    <Compile Include="viewmodel\reportresult.cs" />
+    <Compile Include="viewmodel\reportviewmodel.cs" />
+    <Compile Include="viewmodel\roleviewmodel.cs" />
+    <Compile Include="viewmodel\scoreviewmodel.cs" />
+    <Compile Include="viewmodel\showquviewmodellist.cs" />
+    <Compile Include="viewmodel\showqviewmodel.cs" />
+    <Compile Include="viewmodel\studentcoursesviewmodel.cs" />
+    <Compile Include="viewmodel\studentipviewmodel.cs" />
+    <Compile Include="viewmodel\studentquestionreply.cs" />
+    <Compile Include="viewmodel\studentquestionviewmodel.cs" />
+    <Compile Include="viewmodel\studentviewmodel.cs" />
+    <Compile Include="viewmodel\subjectcourseviewmodel.cs" />
+    <Compile Include="viewmodel\teacherviewmodel.cs" />
+    <Compile Include="viewmodel\viewmodelhomework.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\404.html" />
+    <Content Include="Content\about.html" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.min.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\contact.html" />
+    <Content Include="Content\courses.html" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\elearning-html-template.jpg" />
+    <Content Include="Content\img\about.jpg" />
+    <Content Include="Content\img\carousel-1.jpg" />
+    <Content Include="Content\img\carousel-2.jpg" />
+    <Content Include="Content\img\cat-1.jpg" />
+    <Content Include="Content\img\cat-2.jpg" />
+    <Content Include="Content\img\cat-3.jpg" />
+    <Content Include="Content\img\cat-4.jpg" />
+    <Content Include="Content\img\course-1.jpg" />
+    <Content Include="Content\img\course-2.jpg" />
+    <Content Include="Content\img\course-3.jpg" />
+    <Content Include="Content\img\pexels-jeshootscom-714699.jpg" />
+    <Content Include="Content\img\pexels-pixabay-60582.jpg" />
+    <Content Include="Content\img\pexels-yan-krukov-8617634%281%29.jpg" />
+    <Content Include="Content\img\qweqw.jpg" />
+    <Content Include="Content\img\qwertty.jpg" />
+    <Content Include="Content\img\team-1.jpg" />
+    <Content Include="Content\img\team-2.jpg" />
+    <Content Include="Content\img\team-3.jpg" />
+    <Content Include="Content\img\team-4.jpg" />
+    <Content Include="Content\img\testimonial-1.jpg" />
+    <Content Include="Content\img\testimonial-2.jpg" />
+    <Content Include="Content\img\testimonial-3.jpg" />
+    <Content Include="Content\img\testimonial-4.jpg" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\lib\animate\animate.css" />
+    <Content Include="Content\lib\animate\animate.min.css" />
+    <Content Include="Content\lib\easing\easing.js" />
+    <Content Include="Content\lib\easing\easing.min.js" />
+    <Content Include="Content\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Content\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Content\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\lib\waypoints\links.php" />
+    <Content Include="Content\lib\waypoints\waypoints.min.js" />
+    <Content Include="Content\lib\wow\wow.js" />
+    <Content Include="Content\lib\wow\wow.min.js" />
+    <Content Include="Content\LICENSE.txt" />
+    <Content Include="Content\READ-ME.txt" />
+    <Content Include="Content\team.html" />
+    <Content Include="Content\testimonial.html" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.bootstrap.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.bootstrap.min.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.bootstrap4.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.bootstrap4.min.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.foundation.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.foundation.min.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.jqueryui.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.jqueryui.min.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.semanticui.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\dataTables.semanticui.min.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\jquery.dataTables.css" />
+    <Content Include="datatabels\DataTables-1.10.20\css\jquery.dataTables.min.css" />
+    <Content Include="datatabels\DataTables-1.10.20\images\sort_asc.png" />
+    <Content Include="datatabels\DataTables-1.10.20\images\sort_asc_disabled.png" />
+    <Content Include="datatabels\DataTables-1.10.20\images\sort_both.png" />
+    <Content Include="datatabels\DataTables-1.10.20\images\sort_desc.png" />
+    <Content Include="datatabels\DataTables-1.10.20\images\sort_desc_disabled.png" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.bootstrap.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.bootstrap.min.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.bootstrap4.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.bootstrap4.min.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.foundation.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.foundation.min.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.jqueryui.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.jqueryui.min.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.semanticui.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\dataTables.semanticui.min.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\jquery.dataTables.js" />
+    <Content Include="datatabels\DataTables-1.10.20\js\jquery.dataTables.min.js" />
+    <Content Include="datatabels\datatables.css" />
+    <Content Include="datatabels\datatables.js" />
+    <Content Include="datatabels\datatables.min.css" />
+    <Content Include="datatabels\datatables.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\courses\101.jpg" />
+    <Content Include="Images\courses\11.jpg" />
+    <Content Include="Images\courses\111.jpg" />
+    <Content Include="Images\courses\1201.jpg" />
+    <Content Include="Images\courses\131.jpg" />
+    <Content Include="Images\courses\15pic.jpg" />
+    <Content Include="Images\courses\17center2.jpg" />
+    <Content Include="Images\mrbahaa\0ef7e33b-7afa-4833-bd86-3baf7742806f.jpg" />
+    <Content Include="Images\mrbahaa\1.jpg" />
+    <Content Include="Images\mrbahaa\10.jpg" />
+    <Content Include="Images\mrbahaa\11.jpg" />
+    <Content Include="Images\mrbahaa\123456789.png" />
+    <Content Include="Images\mrbahaa\2.jpg" />
+    <Content Include="Images\mrbahaa\2074878c-5996-4dc0-8392-21c3ccd3d4e5.jpg" />
+    <Content Include="Images\mrbahaa\3.jpg" />
+    <Content Include="Images\mrbahaa\4.jpg" />
+    <Content Include="Images\mrbahaa\4ec5ed7a-603c-42b6-8583-1a7892723b70.jpg" />
+    <Content Include="Images\mrbahaa\5.jpg" />
+    <Content Include="Images\mrbahaa\5323d796-91b6-4e83-adbf-e65740dd0be8.jpg" />
+    <Content Include="Images\mrbahaa\6.jpg" />
+    <Content Include="Images\mrbahaa\65727624-158d-4740-9747-c70840d1f947.jpg" />
+    <Content Include="Images\mrbahaa\7.jpg" />
+    <Content Include="Images\mrbahaa\8.jpg" />
+    <Content Include="Images\mrbahaa\841e653b-0ac1-41cc-8d12-2f3bb68a91ef.jpg" />
+    <Content Include="Images\mrbahaa\9.jpg" />
+    <Content Include="Images\mrbahaa\9409d794-f50d-40a8-a696-8a5c105d3084.jpg" />
+    <Content Include="Images\mrbahaa\ask.png" />
+    <Content Include="Images\mrbahaa\cover10.jpeg" />
+    <Content Include="Images\mrbahaa\cover11.jpeg" />
+    <Content Include="Images\mrbahaa\cover14.png" />
+    <Content Include="Images\mrbahaa\cover15.png" />
+    <Content Include="Images\mrbahaa\cover16.png" />
+    <Content Include="Images\mrbahaa\cover2.jpg" />
+    <Content Include="Images\mrbahaa\cover3.jpg" />
+    <Content Include="Images\mrbahaa\cover4.jpg" />
+    <Content Include="Images\mrbahaa\cver.jpg" />
+    <Content Include="Images\mrbahaa\education.png" />
+    <Content Include="Images\mrbahaa\email.png" />
+    <Content Include="Images\mrbahaa\exams.png" />
+    <Content Include="Images\mrbahaa\exams1.png" />
+    <Content Include="Images\mrbahaa\facebook.png" />
+    <Content Include="Images\mrbahaa\home.html" />
+    <Content Include="Images\mrbahaa\img.png" />
+    <Content Include="Images\mrbahaa\pdf.png" />
+    <Content Include="Images\mrbahaa\pen.png" />
+    <Content Include="Images\mrbahaa\pexels-designecologist-1751279.jpg" />
+    <Content Include="Images\mrbahaa\pexels-ihsan-aditya-2045600.jpg" />
+    <Content Include="Images\mrbahaa\pexels-joshua-miranda-3989165.jpg" />
+    <Content Include="Images\mrbahaa\pexels-leah-kelley-952594.jpg" />
+    <Content Include="Images\mrbahaa\pexels-magda-ehlers-1337372.jpg" />
+    <Content Include="Images\mrbahaa\pexels-maria-tyutina-954599.jpg" />
+    <Content Include="Images\mrbahaa\pexels-pixabay-256417.jpg" />
+    <Content Include="Images\mrbahaa\pexels-pixabay-267669.jpg" />
+    <Content Include="Images\mrbahaa\pexels-pixabay-268533.jpg" />
+    <Content Include="Images\mrbahaa\pexels-pixabay-301920.jpg" />
+    <Content Include="Images\mrbahaa\pexels-ready-made-4033701.jpg" />
+    <Content Include="Images\mrbahaa\phone.png" />
+    <Content Include="Images\mrbahaa\record.png" />
+    <Content Include="Images\mrbahaa\sad2as1d3as21d3.jpg" />
+    <Content Include="Images\mrbahaa\Screenshot %28108%29.png" />
+    <Content Include="Images\mrbahaa\teacher.png" />
+    <Content Include="Images\profile\5f78de4d-0ee7-4fa2-83e0-f89d8033adce.jpg" />
+    <Content Include="Images\profile\ahmeasdasdasdaqwd%40gmail.compro2.jpg" />
+    <Content Include="Images\profile\homework\5f78de4d-0ee7-4fa2-83e0-f89d8033adce.jpg" />
+    <Content Include="Images\teacher\12f92dcb1-3abf-4f9f-8f83-7cc6b6fa0516.jpg" />
+    <Content Include="Images\teacher\3photo3.jpg" />
+    <Content Include="Images\teacher\5بروفايل المهندس%281%29.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="datatabels\DataTables.zip" />
+    <Content Include="Images\mrbahaa\ask" />
+    <Content Include="Content\.gitattributes" />
+    <Content Include="Content\lib\owlcarousel\LICENSE" />
+    <Content Include="Content\scss\bootstrap.scss" />
+    <Content Include="Content\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Content\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Content\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Content\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Content\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Content\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Content\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Content\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Content\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Content\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.min.js.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\a.jpg" />
+    <Content Include="Views\Home\404.html" />
+    <Content Include="Views\Home\about.html" />
+    <Content Include="Views\Home\contact.html" />
+    <Content Include="Views\Home\courses.html" />
+    <Content Include="Views\Home\css\bootstrap.min.css" />
+    <Content Include="Views\Home\css\style.css" />
+    <Content Include="Views\Home\elearning-html-template.jpg" />
+    <Content Include="Views\Home\how\404.html" />
+    <Content Include="Views\Home\img\about.jpg" />
+    <Content Include="Views\Home\img\carousel-1.jpg" />
+    <Content Include="Views\Home\img\carousel-2.jpg" />
+    <Content Include="Views\Home\img\cat-1.jpg" />
+    <Content Include="Views\Home\img\cat-2.jpg" />
+    <Content Include="Views\Home\img\cat-3.jpg" />
+    <Content Include="Views\Home\img\cat-4.jpg" />
+    <Content Include="Views\Home\img\course-1.jpg" />
+    <Content Include="Views\Home\img\course-2.jpg" />
+    <Content Include="Views\Home\img\course-3.jpg" />
+    <Content Include="Views\Home\img\team-1.jpg" />
+    <Content Include="Views\Home\img\team-2.jpg" />
+    <Content Include="Views\Home\img\team-3.jpg" />
+    <Content Include="Views\Home\img\team-4.jpg" />
+    <Content Include="Views\Home\img\testimonial-1.jpg" />
+    <Content Include="Views\Home\img\testimonial-2.jpg" />
+    <Content Include="Views\Home\img\testimonial-3.jpg" />
+    <Content Include="Views\Home\img\testimonial-4.jpg" />
+    <Content Include="Views\Home\index.html" />
+    <Content Include="Views\Home\js\main.js" />
+    <Content Include="Views\Home\lib\animate\animate.css" />
+    <Content Include="Views\Home\lib\animate\animate.min.css" />
+    <Content Include="Views\Home\lib\easing\easing.js" />
+    <Content Include="Views\Home\lib\easing\easing.min.js" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Views\Home\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Views\Home\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Views\Home\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Views\Home\lib\waypoints\links.php" />
+    <Content Include="Views\Home\lib\waypoints\waypoints.min.js" />
+    <Content Include="Views\Home\lib\wow\wow.js" />
+    <Content Include="Views\Home\lib\wow\wow.min.js" />
+    <Content Include="Views\Home\LICENSE.txt" />
+    <Content Include="Views\Home\READ-ME.txt" />
+    <Content Include="Views\Home\team.html" />
+    <Content Include="Views\Home\testimonial.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\admin\Delete.cshtml" />
+    <Content Include="Views\admin\Details.cshtml" />
+    <Content Include="Views\admin\Edit.cshtml" />
+    <Content Include="Views\admin\Index.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\accept.cshtml" />
+    <Content Include="Views\exams\Create.cshtml" />
+    <Content Include="Views\exams\Delete.cshtml" />
+    <Content Include="Views\exams\Details.cshtml" />
+    <Content Include="Views\exams\Edit.cshtml" />
+    <Content Include="Views\exams\Index.cshtml" />
+    <Content Include="Views\lectures\Create.cshtml" />
+    <Content Include="Views\lectures\Delete.cshtml" />
+    <Content Include="Views\lectures\Details.cshtml" />
+    <Content Include="Views\lectures\Edit.cshtml" />
+    <Content Include="Views\lectures\Index.cshtml" />
+    <Content Include="Views\questions\answar.cshtml" />
+    <Content Include="Views\questions\Create.cshtml" />
+    <Content Include="Views\questions\Delete.cshtml" />
+    <Content Include="Views\questions\Details.cshtml" />
+    <Content Include="Views\questions\Edit.cshtml" />
+    <Content Include="Views\questions\Index.cshtml" />
+    <Content Include="Views\questions\solve.cshtml" />
+    <Content Include="Views\roles\Createrole.cshtml" />
+    <Content Include="Views\roles\Index.cshtml" />
+    <Content Include="Views\roles\Delete.cshtml" />
+    <Content Include="Views\exams\readonley.cshtml" />
+    <Content Include="Views\exams\readonlydetails.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Students\readonly.cshtml" />
+    <Content Include="Views\lectures\readonly.cshtml" />
+    <Content Include="Views\lectures\readonlydetails.cshtml" />
+    <Content Include="Views\studentquestions\Create.cshtml" />
+    <Content Include="Views\studentquestions\Delete.cshtml" />
+    <Content Include="Views\studentquestions\Details.cshtml" />
+    <Content Include="Views\studentquestions\Edit.cshtml" />
+    <Content Include="Views\studentquestions\Index.cshtml" />
+    <Content Include="Views\studentquestions\reply.cshtml" />
+    <Content Include="Views\roles\Details.cshtml" />
+    <Content Include="Views\roles\addtorole.cshtml" />
+    <Content Include="Views\exams\readonlydetails - Copy.cshtml" />
+    <Content Include="Views\questions\answar - Copy.cshtml" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\studentquestions\Index - Copy.cshtml" />
+    <Content Include="Views\studentquestions\myquestion.cshtml" />
+    <Content Include="Views\exams\min.cshtml" />
+    <Content Include="Views\Students\changephoto.cshtml" />
+    <Content Include="Views\homework\Create.cshtml" />
+    <Content Include="Views\homework\Delete.cshtml" />
+    <Content Include="Views\homework\Details.cshtml" />
+    <Content Include="Views\homework\Edit.cshtml" />
+    <Content Include="Views\homework\Index.cshtml" />
+    <Content Include="Views\homework\addhomework.cshtml" />
+    <Content Include="Views\homework\Myhomework.cshtml" />
+    <Content Include="Views\homework\show.cshtml" />
+    <Content Include="Views\homework\evaluate.cshtml" />
+    <Content Include="Views\exams\report.cshtml" />
+    <Content Include="Views\exams\show.cshtml" />
+    <Content Include="Views\Account\cant.cshtml" />
+    <Content Include="Views\exams\end.cshtml" />
+    <Content Include="Views\exams\select.cshtml" />
+    <Content Include="Views\exams\myquestion.cshtml" />
+    <Content Include="Views\exams\allexams.cshtml" />
+    <Content Include="Views\Home\done.cshtml" />
+    <Content Include="Views\Students\essay.cshtml" />
+    <Content Include="Views\Students\myatt.cshtml" />
+    <Content Include="Views\Students\mydegree.cshtml" />
+    <Content Include="Views\exams\answers.cshtml" />
+    <Content Include="Views\Students\homework.cshtml" />
+    <Content Include="Views\exams\newasnwar.cshtml" />
+    <Content Include="Views\lectures\youtube.cshtml" />
+    <Content Include="Views\lectures\live.cshtml" />
+    <Content Include="Views\lectures\examfirst.cshtml" />
+    <Content Include="Views\lectures\youtube - Copy.cshtml" />
+    <Content Include="Views\lectures\Edit - Copy.cshtml" />
+    <Content Include="Views\forgetpasses\Create.cshtml" />
+    <Content Include="Views\forgetpasses\Delete.cshtml" />
+    <Content Include="Views\forgetpasses\Details.cshtml" />
+    <Content Include="Views\forgetpasses\Edit.cshtml" />
+    <Content Include="Views\forgetpasses\Index.cshtml" />
+    <Content Include="Views\Students\Details - Copy.cshtml" />
+    <Content Include="Views\Home\.gitattributes" />
+    <Content Include="Views\Home\lib\owlcarousel\LICENSE" />
+    <Content Include="Views\Home\scss\bootstrap.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Views\Home\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Views\Teachers\Create.cshtml" />
+    <Content Include="Views\Teachers\Delete.cshtml" />
+    <Content Include="Views\Teachers\Details.cshtml" />
+    <Content Include="Views\Teachers\Edit.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\subjectcoures\Create.cshtml" />
+    <Content Include="Views\subjectcoures\Delete.cshtml" />
+    <Content Include="Views\subjectcoures\Details.cshtml" />
+    <Content Include="Views\subjectcoures\Edit.cshtml" />
+    <Content Include="Views\subjectcoures\Index.cshtml" />
+    <Content Include="Views\coursescategories\Create.cshtml" />
+    <Content Include="Views\coursescategories\Delete.cshtml" />
+    <Content Include="Views\coursescategories\Details.cshtml" />
+    <Content Include="Views\coursescategories\Edit.cshtml" />
+    <Content Include="Views\coursescategories\Index.cshtml" />
+    <Content Include="Views\Joins\Create.cshtml" />
+    <Content Include="Views\Joins\Delete.cshtml" />
+    <Content Include="Views\Joins\Details.cshtml" />
+    <Content Include="Views\Joins\Edit.cshtml" />
+    <Content Include="Views\Joins\Index.cshtml" />
+    <Content Include="Views\Joins\join.cshtml" />
+    <Content Include="Views\Students\courses.cshtml" />
+    <Content Include="Views\subjectcoures\Index - Copy.cshtml" />
+    <Content Include="Views\subjectcoures\Details - Copy.cshtml" />
+    <Content Include="Views\Teachers\Details - Copy.cshtml" />
+    <Content Include="Views\Teachers\Index - Copy.cshtml" />
+    <Content Include="Views\coursescategories\Index - Copy.cshtml" />
+    <Content Include="Views\coursescategories\Details - Copy.cshtml" />
+    <Content Include="Views\Students\mycourses.cshtml" />
+    <Content Include="Views\lectures\natapprovd.cshtml" />
+    <Content Include="Views\lectures\natapprovd - Copy.cshtml" />
+    <Content Include="Views\exams\natapprovd.cshtml" />
+    <Content Include="Views\studentquestions\teacherquestions.cshtml" />
+    <Content Include="Views\Home\how.cshtml" />
+    <Content Include="Views\lectures\timeout.cshtml" />
+    <Content Include="Views\Students\lecturelock.cshtml" />
+    <Content Include="Views\lecturelocks\Create.cshtml" />
+    <Content Include="Views\lecturelocks\Delete.cshtml" />
+    <Content Include="Views\lecturelocks\Details.cshtml" />
+    <Content Include="Views\lecturelocks\Edit.cshtml" />
+    <Content Include="Views\lecturelocks\Index.cshtml" />
+    <Content Include="Views\subjectcoures\report.cshtml" />
+    <Content Include="Views\subjectcoures\show.cshtml" />
+    <Content Include="Views\lectures\ipnotapp.cshtml" />
+    <Content Include="Views\Students\studenip.cshtml" />
+    <Content Include="Views\studentips\Create.cshtml" />
+    <Content Include="Views\studentips\Delete.cshtml" />
+    <Content Include="Views\studentips\Details.cshtml" />
+    <Content Include="Views\studentips\Edit.cshtml" />
+    <Content Include="Views\studentips\Index.cshtml" />
+    <Content Include="Views\onelectures\Create.cshtml" />
+    <Content Include="Views\onelectures\Delete.cshtml" />
+    <Content Include="Views\onelectures\Details.cshtml" />
+    <Content Include="Views\onelectures\Edit.cshtml" />
+    <Content Include="Views\onelectures\Index.cshtml" />
+    <Content Include="Views\onelectures\detailscodes.cshtml" />
+    <Content Include="Views\onelectures\readonly.cshtml" />
+    <Content Include="Views\onelectures\view.cshtml" />
+    <Content Include="Views\onelectures\ipnotapp.cshtml" />
+    <Content Include="Views\onelectures\youtube.cshtml" />
+    <Content Include="Views\codes\Create.cshtml" />
+    <Content Include="Views\codes\Delete.cshtml" />
+    <Content Include="Views\codes\Details.cshtml" />
+    <Content Include="Views\codes\Edit.cshtml" />
+    <Content Include="Views\codes\Index.cshtml" />
+    <Content Include="Views\onelectures\detailscodes - Copy.cshtml" />
+    <Content Include="Views\lectures\homwrorkfirst.cshtml" />
+    <Content Include="Views\exams\homework.cshtml" />
+    <Content Include="Views\exams\.cshtml" />
+    <Content Include="Views\exams\end - Copy.cshtml" />
+    <Content Include="Views\Home\More.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202207231042581_first.resx">
+      <DependentUpon>202207231042581_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207260126012_studentquestion.resx">
+      <DependentUpon>202207260126012_studentquestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207260131144_studentquestionn.resx">
+      <DependentUpon>202207260131144_studentquestionn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207260132066_studentquestionnn.resx">
+      <DependentUpon>202207260132066_studentquestionnn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208041514149_lecturelock.resx">
+      <DependentUpon>202208041514149_lecturelock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209132227138_studentip.resx">
+      <DependentUpon>202209132227138_studentip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209140245099_onelectures.resx">
+      <DependentUpon>202209140245099_onelectures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209140256305_codes.resx">
+      <DependentUpon>202209140256305_codes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209140310115_code.resx">
+      <DependentUpon>202209140310115_code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209151727134_examhome.resx">
+      <DependentUpon>202209151727134_examhome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209181523492_homework.resx">
+      <DependentUpon>202209181523492_homework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209181530024_homeworks.resx">
+      <DependentUpon>202209181530024_homeworks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309262136055_new.resx">
+      <DependentUpon>202309262136055_new.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\fingerprintjs\fingerprint.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1676</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1676/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

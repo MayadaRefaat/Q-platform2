@@ -1,0 +1,50 @@
+﻿@model mr_bahaa.Models.VerifyCodeViewModel
+@{
+    ViewBag.Title = "Verify";
+}
+    <div class="container mb-4">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+                <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                    <div class="justify-content-center pl-5">
+                        <h4>Enter verification code</h4>
+                    </div>
+                  
+
+                    @using (Html.BeginForm("VerifyCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.Hidden("provider", @Model.Provider)
+                        @Html.Hidden("rememberMe", @Model.RememberMe)
+                       
+                        <hr />
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Code, new { @class = "control-label" })
+                            <div >
+                                @Html.TextBoxFor(m => m.Code, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberBrowser)
+                                    @Html.LabelFor(m => m.RememberBrowser)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btnCreate" value="Submit" />
+                            </div>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }

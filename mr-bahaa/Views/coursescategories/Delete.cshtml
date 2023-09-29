@@ -1,0 +1,34 @@
+﻿@model mr_bahaa.Models.coursescategories
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container categoryContainer">
+    <h2>Delete course categories</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <hr />
+    <div class="dl-horizontal">
+        <label>
+            @Html.DisplayNameFor(model => model.name) :
+        </label>
+
+        <b>
+            @Html.DisplayFor(model => model.name)
+        </b>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger py-2" />
+            <button class="btn btn-primary back py-2">@Html.ActionLink("Back to List", "Index")</button>
+        </div>
+    }
+</div>

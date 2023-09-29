@@ -1,0 +1,78 @@
+﻿@model mr_bahaa.viewmodel.categoriesviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<div class="container categoryContainer">
+    <h4>course category Details</h4>
+    <hr />
+    <div class="dl-horizontal">
+
+        <p>
+            @Html.DisplayFor(model => model.coursescategories.name)
+        </p>
+        <p class="px-2" style="float:right;">
+            <button class="btn btn-info py-2 back"> @Html.ActionLink("Edit", "Edit", new { id = Model.coursescategories.catigoriesid }) </button>
+            <button class="btn btn-primary py-2 back"> @Html.ActionLink("Back to List", "Index")</button>
+        </p>
+    </div>
+</div>
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+            <h1 class="mb-5">Popular Courses</h1>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            @{
+                foreach (var item in Model.subjectcourseviewmodel)
+                {
+
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="course-item bg-light">
+                            <div class="position-relative overflow-hidden">
+                                <a href="~/subjectcoures/details/@item.subjectcoure.subjectcourseid"> <img class="img-fluid" src="@item.img.photoulr" alt="" style="width:100%; height:250px;"></a>
+                                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                                    @{
+
+                                    }
+                                    <button class="flex-shrink-0 btn btn-sm btn-primary px-3 back" style="border-radius: 0 30px 30px 0;">@Html.ActionLink("انضم الان ", "join", "Joins", new { courseid = item.subjectcoure.subjectcourseid }, null)</button>
+                                </div>
+                            </div>
+                            <div class="text-center p-4 pb-0">
+                                <h3 class="mb-0">140 EGP</h3>
+                                <div class="mb-3">
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small>(123)</small>
+                                </div>
+                                <h5 class="mb-4">@item.subjectcoure.name</h5>
+                            </div>
+                            <div class="d-flex border-top">
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>@item.subjectcoure.teacher.name</small>
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i></small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i></small>
+                            </div>
+                        </div>
+                    </div>
+
+                                        }
+
+            }
+        </div>
+    </div>
+
+
+</div>
+
+

@@ -1,0 +1,84 @@
+﻿@model mr_bahaa.viewmodel.subjectcourseviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container categoryContainer">
+    <div class="row">
+        <div class="col-sm-6">
+            <h4></h4>
+        </div>
+        <div class="col-sm-6">
+         </div>
+    </div>
+    @{
+        if (Request.IsAuthenticated)
+        {
+
+        }
+        else
+        {
+            <button class="flex-shrink-0 btn btn-sm btn-primary px-3 back" style="border-radius: 0 30px 30px 0; width:200px;height:50px">@Html.ActionLink("انضم الان ", "join", "Joins", new { courseid = Model.subjectcoure.subjectcourseid }, null)</button>
+
+        }
+    }
+
+    <hr />
+
+    <div class="dl-horizontal">
+        <div class="row">
+            <div class="col-sm-6"><img src="@Html.DisplayFor(model=>model.img.photoulr)" alt="" style="width:100%;"></div>
+            <div class="col-sm-6">
+                <h2>@Html.DisplayFor(model => model.subjectcoure.name)</h2>
+                <h5>
+                    <i class="fas fa-user px-2" style="color: #38c9d6; font-size:16px;"></i>
+                    <label>اسم المعلم:</label>
+                    <b class="px-2">@Html.DisplayFor(model => model.subjectcoure.teacher.name)</b>
+                </h5>
+                <div>
+                    <p class="px-4">
+                        <label>الاقسام:</label>
+                        <span> @Html.DisplayFor(model => model.subjectcoure.coursescategories.name)</span>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label><i class="fas fa-keynote"></i>المحاضرات </label>
+                        <ol>
+                            @{
+                                foreach (var item in Model.lectures)
+                                {
+                                    <li><a href="~/lectures/details/@item.lectureid"> @item.name</a></li>
+                                }
+                            }
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>الامتحان الجديد</label>
+                        <ol>
+                            @{
+                                foreach (var item in Model.exams)
+                                {
+                                    <li><a href="~/exams/details/@item.examid"> @item.name</a></li>
+                                }
+                            }
+                        </ol>
+                    </div>
+                </div>
+                <p class="py-3 text-right">
+                   
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+

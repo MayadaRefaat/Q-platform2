@@ -1,0 +1,254 @@
+﻿@model mr_bahaa.viewmodel.scoreviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-3 well">
+                <div class="card shadow p-3 mb-2 bg-gray rounded">
+
+                    <img src="@Html.DisplayFor(model=>Model.img)" class="img-circle" style="border-radius:50%" alt="Avatar">
+                    <h5 class="pt-3 text-center"> @Html.DisplayFor(model => model.student.studentname)</h5>
+                    @Html.ActionLink("change photo", "changephoto", "Students", new { id = Model.student.id }, new { @class = "btn btndark" })
+
+                    <hr />
+                    <p>
+                        <i class="fa fa-home fa-fw" aria-hidden="true"></i>
+                        Overview
+                    </p>
+                    <p>
+                        <i class="fa fa-university fa-fw" aria-hidden="true"></i>
+                        @Html.DisplayFor(model => model.student.school)
+                    </p>
+                    <p><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i>  @Html.DisplayFor(model => model.student.PhoneNumber)</p>
+                    <p><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i>  @Html.DisplayFor(model => model.student.secPhoneNumber)</p>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <h4 class="pb-3 pt-2 text-center card-header"> Paper exams scores </h4>
+
+                <div class="card shadow p-3 mb-4 bg-white rounded">
+                    <div class="panel panel-default text-left">
+
+                        <div class="panel-body table-responsive">
+
+
+                            <table class="table table-bordered  " style="width:100%">
+                                <thead class="thead-dark ">
+                                    <tr class="cell-breakAll" style="font-size:16px">
+
+
+
+                                        <th>
+                                            @Html.Label("points")
+                                        </th>
+                                        <th>
+                                            @Html.Label("date")
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.scores)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.points)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.date)
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <h4 class="pb-3 pt-2 text-center card-header"> Online exams scores  </h4>
+                <div class="card shadow p-3 mb-4 bg-white rounded">
+                    <div class="panel panel-default text-left">
+
+                        <div class="panel-body table-responsive">
+                            <table class="table table-bordered  " style="width:100%">
+
+                                <thead class="thead-dark ">
+                                    <tr class="cell-breakAll" style="font-size:16px">
+
+                                        <th>
+                                            @Html.Label("Name")
+                                        </th>
+                                        <th>
+                                            @Html.Label("points")
+                                        </th>
+                                        <th>
+                                            @Html.Label("total")
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.quesscore)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.name)
+
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.score)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.from)
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <h4 class="pb-3 pt-2 text-center card-header"> Student attendance  </h4>
+
+                <div class="card shadow p-3 mb-4 bg-white rounded">
+                    <div class="panel panel-default text-left">
+
+                        <div class="panel-body table-responsive">
+                            <table class="table table-bordered  " style="width:100%">
+
+                                <thead class="thead-dark ">
+                                    <tr class="cell-breakAll" style="font-size:16px">
+
+                                        <th>
+                                            @Html.Label("Name")
+                                        </th>
+                                        <th>
+                                            @Html.Label("attendance")
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.absenseviewmodels)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.name)
+
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Presence)
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <h4 class="pb-3 pt-2 card-header text-center"> Student Homework  </h4>
+                <div class="card shadow p-3 mb-4 bg-white rounded">
+                    <div class="panel panel-default text-left">
+
+                        <div class="panel-body  table-responsive">
+
+                            <table class="table table-bordered  " style="width:100%">
+
+                                <thead class="thead-dark ">
+                                    <tr class="cell-breakAll" style="font-size:16px">
+
+                                        <th>
+                                            @Html.Label("Name")
+                                        </th>
+                                        <th>
+                                            @Html.Label("homework")
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.homeworks)
+                                    {
+                                        <tr class="cell-breakAll">
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.lecture.name)
+
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Evaluation)
+                                            </td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+                <div class="col-md-3 well">
+                    <div class="card shadow p-3 mb-2 bg-white rounded">
+                        <div class="panel panel-default text-left">
+                            <div class="panel-body">
+                                <img src="~/Images/mrbahaa/cover16.png"
+                                     class="img-circle" height="150" width="100%" alt="Avatar">
+
+                                <h5 contenteditable="true" class="pt-3">Cumulative total = @Html.DisplayFor(model => model.total)</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+       </div>
+
+       

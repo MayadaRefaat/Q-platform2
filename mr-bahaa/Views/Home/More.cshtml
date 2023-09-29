@@ -1,0 +1,114 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center pl-5">
+                    <h2 class="p-4"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="row justify-content-center pt-5 pb-5">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center pb-4">
+            <div class="card  my-5 shadow-lg p-4 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center pl-4 d-flex">
+                    <p class="pr-2">
+                    </p>
+
+
+                    @{
+                        if (User.IsInRole("can_mange"))
+                        {
+                            <p class="pr-2">
+                                @Html.ActionLink("Lectures", "Index", "lectures", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                            <p class="pr-2">
+                                @Html.ActionLink("Exams", "Index", "exams", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                            <p class="pr-2">
+                                @Html.ActionLink("Students", "Index", "Students", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                            <p class="pr-2">
+
+                                @Html.ActionLink("student questions ", "Index", "studentquestions", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                            <p class="pr-2">
+                                @Html.ActionLink("Report", "report", "exams", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                            <p class="pr-2">
+                                @Html.ActionLink("password", "Index", "forgetpasses", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                            <p class="pr-2">
+                                @Html.ActionLink("Delete all Fingerprint", "deleteall", "Home", routeValues: null, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                        }
+                        else if (Request.IsAuthenticated)
+                        {
+                            ApplicationDbContext db = new ApplicationDbContext();
+
+
+                            string currentUserId = User.Identity.GetUserId();
+
+                            ApplicationUser currentUser = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+                            ApplicationUser user = db.Users.FirstOrDefault(x => x.Id == currentUserId);
+
+                            var students = db.students.ToList();
+                            Student student = new Student(); ;
+
+                            foreach (var item in students)
+                            {
+                                if (item.userid == currentUser.Id)
+                                {
+                                    student = item;
+                                }
+
+                            }
+
+                            <p class="pr-2">
+                                @Html.ActionLink("تقيمات الواجب ", "myhomework", "Students", new { id = student.id }, htmlAttributes: new { @class = "btn success" })
+                            </p>
+                                                <p class="pr-2">
+
+                                                    @Html.ActionLink("درجات الامتحانات الاختباريه ", "mydegree", "Students", new { id = student.id }, htmlAttributes: new { @class = "btn success" })
+                                                </p>
+                                                <p class="pr-2">
+                                                    @Html.ActionLink("الامتحانات السابقه", "answers", "exams", new { area = "" }, htmlAttributes: new { @class = "btn success" })
+                                                </p>
+                                                <p class="pr-2">
+                                                    @Html.ActionLink("الحضور والغياب ", "myatt", "Students", new { id = student.id }, htmlAttributes: new { @class = "btn success" })
+                                                </p>
+                                                <p class="pr-2">
+                                                    @Html.ActionLink("Ask MR", "Index", "studentquestions", new { area = "" }, htmlAttributes: new { @class = "btn success" })
+                                                </p>
+                                                <p class="pr-2">
+                                                    @Html.ActionLink("تقديم الواجب ", "create", "homework", new { area = "" }, htmlAttributes: new { @class = "btn success" })
+                                                </p>
+
+                        }
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+     @using System.Linq;
+     @using Microsoft.AspNet.Identity;
+     @using mr_bahaa.Models;
+
+
+
+
+</script>

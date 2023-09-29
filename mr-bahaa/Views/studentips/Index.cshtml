@@ -1,0 +1,46 @@
+﻿@model IEnumerable<mr_bahaa.Models.studentip>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.lecture.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ipaddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lecture.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ipaddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.studentipid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.studentipid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.studentipid })
+        </td>
+    </tr>
+}
+
+</table>

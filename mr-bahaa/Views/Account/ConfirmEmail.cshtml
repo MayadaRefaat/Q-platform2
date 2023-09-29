@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Confirm Email";
+}
+    <div class="container mb-4">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+                <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                    <div class="justify-content-center pl-5">
+                        <h2>@ViewBag.Title.</h2>
+                    </div>
+                   <hr />
+                    <div>
+                        <p>
+                            Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                        </p>
+                    </div>
+                    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model mr_bahaa.Models.onelecture
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+   
+    <div class="form-horizontal">
+        <h2>الرجاء ادخال الكود اسفل </h2>
+
+        <h4>الرجاء ادخال الكود في الاسفل </h4>
+        <h5>اذا كان الكود خطا سيتم اعادتك لهنا مره اخري </h5>
+
+        <hr />
+        @Html.HiddenFor(Model => Model.lectureid)
+        @Html.HiddenFor(Model => Model.oneid)
+        <p>
+            @ViewBag.massage
+
+
+        </p>
+
+        <input type="number" name="codes" class="form-control" required/>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="الذهاب الي الحصه" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

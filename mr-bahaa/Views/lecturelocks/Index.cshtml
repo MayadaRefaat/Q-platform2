@@ -1,0 +1,46 @@
+﻿@model IEnumerable<mr_bahaa.Models.lecturelock>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.lecture.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entered)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lecture.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entered)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.lecturelockid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.lecturelockid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.lecturelockid })
+        </td>
+    </tr>
+}
+
+</table>

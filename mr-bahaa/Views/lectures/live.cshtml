@@ -1,0 +1,164 @@
+﻿@model mr_bahaa.viewmodel.lectureviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <script src="https://cdn.plyr.io/3.6.3/plyr.polyfilled.js"></script>
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+
+
+</head>
+<style>
+
+</style>
+<div class="container pt-5">
+    <div class="row   testtest">
+        <div class="col-md-4">
+            <div class="card shadow p-3 mb-2 bg-white rounded" style="justify-content:center">
+                <div>
+
+                    <h5 class="pt-3 text-center">Lecture : @Html.DisplayFor(model => model.lecture.name)</h5>
+                </div>
+
+                <h5 class="pt-3 text-center"> Lecture's Date :  @Html.DisplayFor(model => model.lecture.date)</h5>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <h3 class="card-header text-center">
+                Explanation
+            </h3>
+            <div class="card shadow p-3 mb-4 bg-white rounded">
+                <div class="panel panel-default text-left">
+                    <div class="panel-body" style="width:100%">
+                        <h1>البث المباشر خاص بالاسئله </h1>
+
+                        <h1>للشكاوي اتصل يالدعم </h1>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            @{ int count = 0; int xc = 0; }
+
+
+
+
+            @foreach (var x in Model.iframe)
+            {
+
+                <div class="card shadow p-3 mb-4 bg-white rounded">
+                    <div class="panel panel-default text-left">
+                        <div class="panel-body">
+                            <div>
+                                @if (xc == 0)
+                                {
+                                   <a class="btn success" href="@x"> الذهاب الي اللايف اضغط هنا </a>
+                                }
+                                else
+                                {
+
+                                    <div class="plyr__video-embed" id="player">
+                                        <iframe src="@x?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                                                allowfullscreen
+                                                allowtransparency
+                                                allow="autoplay"></iframe>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                xc++;
+            }
+
+
+
+            <div>
+                @foreach (var x in Model.pdf)
+                {
+
+                    <a href="@Html.DisplayFor(modelItem => x.photoUrl)" download=""><img src="~/Images/mrbahaa/pdf.png" width="50px" alt="Alternate Text" /> </a>
+                }
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+<script src="path/to/plyr.js"></script>
+<script>
+    const player = new Plyr('#player');
+</script>
+
+<script>
+
+
+    var diiiv = document.getElementsByClassName("card shadow p-3 mb-4 bg-white rounded");
+    diiiv.style.display = "none";
+
+
+    var call = function (elementId) {
+        var modal = document.getElementById('myModal');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById(elementId);
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
+
+
+    setInterval(document.getElementsByClassName("ytp-chrome-top-buttons")[0].style.display = 'none', 3000);
+
+    setTimeout(() => {
+        let yt = document.getElementsByClassName('ytp-chrome-top-buttons')[0];
+        console.log(yt);
+        yt.setAttribute("style", "display: none!important");
+    }, 3000)
+
+
+
+    setTimeout(() => {
+        let yt = document.getElementsByClassName('ytp-button')[0];
+        console.log(yt);
+        yt.setAttribute("style", "display: none!important");
+    }, 3000)
+
+
+
+</script>
+            </div>
+<p>
+
+</p>

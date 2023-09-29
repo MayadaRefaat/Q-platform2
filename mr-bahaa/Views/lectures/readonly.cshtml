@@ -1,0 +1,107 @@
+﻿@model IEnumerable<mr_bahaa.Models.lecture>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: bold;
+      
+        border-radius: 10px;
+        padding: 5px;
+    }
+</style>
+
+
+<div class="container mb-4">
+    <div class="row justify-content-centery">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto  ">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="p-md-5 ">
+                    <div class="container mb-4">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+                                <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                                    <div class="justify-content-center pl-5">
+
+
+                                        <hr>
+                                        <h3>
+سوف يستمر مستر محمد النجار في الرد علي اسئلتكم وجميع استفساراتكم الي يوم الامتحان لترك سؤالك في اسال مستر النجار                                        </h3>
+                                        <h3>
+يرجي العلم ان الاشتراك الواحد لطالب واحد فقط  ودخول اكثر من طالب علي الاشتراك تعد نوع من انواع السرقه ومحرمه 
+                                        </h3>
+
+                                        <h3>
+                                            يرجي التكرم في حضور الحصص المتاخره 
+                                        </h3>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>
+                       Lectures
+                    </h3>
+                    <div class="justify-content-center card-body table-responsive">
+                        <table id="" class="table table-bordered  " style="width:100%">
+                            <thead class="thead-dark ">
+                                <tr class="cell-breakAll" style="font-size:16px">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.date)
+                                    </th>
+                                   
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.date)
+                                        </td>
+                                       
+                                        <td>
+
+                                            @Html.ActionLink("View", "Details", "lectures", new { id = item.lectureid }, new { @class = "btn info" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                        @section scripts
+{
+                            <script src="~/datatabels/DataTables-1.10.20/js/jquery.dataTables.js"></script>
+
+                            <script type="text/javascript">
+
+                                $(document).ready(function () {
+                                    $('#myTable').dataTable();
+                                });
+
+                            </script>
+                        }

@@ -1,0 +1,38 @@
+﻿@model mr_bahaa.viewmodel.roleviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+@Html.ActionLink("add to this Role ", "addtorole", "roles", new { id =Model.roleid },new { @class = "btn success" })
+
+<table class="table ">
+    <tr>
+
+
+
+        <th>
+            @Html.Label(" name")
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.users)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+
+            <td>
+                @Html.ActionLink("remove", "remove", new { Id = item.Id,roleid=Model.roleid }, new { @class = "btn info" })
+
+            </td>
+        </tr>
+    }
+
+</table>

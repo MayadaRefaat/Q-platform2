@@ -1,0 +1,51 @@
+﻿@model mr_bahaa.Models.homework
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>homework</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.lecture.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lecture.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.studentname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.studentname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evaluation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evaluation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.homeworkid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

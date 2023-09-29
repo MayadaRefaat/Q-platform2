@@ -1,0 +1,73 @@
+﻿@model mr_bahaa.viewmodel.adminviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-4 well">
+            <div class="card shadow p-3 mb-2 bg-white rounded">
+                <img src="@Html.DisplayFor(model=>Model.pro)" class="img-circle" alt="Avatar">
+                <h4 class="pt-3 text-center">  @Html.DisplayFor(model => model.user.UserName)</h4>
+                <hr />
+                <p>
+                    <i class="fa fa-university fa-fw" aria-hidden="true"></i>
+                    @Html.DisplayFor(model => model.user.School)
+                </p>
+                <p><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i> @Html.DisplayFor(model => model.user.PhoneNumber)</p>
+                <p><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i> @Html.DisplayFor(model => model.user.secphonenumber)</p>
+
+                <p>
+                    @Html.DisplayFor(model => model.user.Yourclass)
+                    @Html.DisplayFor(model => model.user.Appointment)
+                </p>
+            </div>
+            <div class="card shadow p-3 mb-2 bg-white rounded">
+                <div class="pb-2">
+                    @Html.ActionLink("accecpt ", "accept", "Students", new { id = Model.user.Id }, new { @class = "btn btn-block btnprimary" ,@style="background-color:green"})
+                </div>
+                @Html.ActionLink("Delete", "Delete", new { id = Model.user.Id }, new { @class = "btn btn-block btnprimary",@style="background-color:gray" })
+
+            </div>
+
+        </div>
+        <div class="col-md-7">
+            <h3 class="text-center card-header"> Student's certification</h3>
+            <div class="card shadow p-3 mb-4 bg-white rounded">
+                <div class="panel panel-default text-left">
+                    <div class="panel-body">
+                        <div>
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                    
+                            <script>
+                                // Get the modal
+                                var modal = document.getElementById('myModal');
+
+                                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                                var img = document.getElementById('myImg');
+                                var modalImg = document.getElementById("img01");
+                                var captionText = document.getElementById("caption");
+                                img.onclick = function () {
+                                    modal.style.display = "block";
+                                    modalImg.src = this.src;
+                                    captionText.innerHTML = this.alt;
+                                }
+
+                                // Get the <span> element that closes the modal
+                                var span = document.getElementsByClassName("close")[0];
+
+                                // When the user clicks on <span> (x), close the modal
+                                span.onclick = function () {
+                                    modal.style.display = "none";
+                                }
+                            </script>
+                        </div>

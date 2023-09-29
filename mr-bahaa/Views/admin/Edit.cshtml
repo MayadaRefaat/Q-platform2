@@ -1,0 +1,104 @@
+﻿@model mr_bahaa.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center">
+                    <h2 class="text-center card-header">Edit User</h2>
+                </div>
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <hr />
+                    <div class="form-horizontal pl-5">
+                        
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+                        @Html.HiddenFor(model => model.Email)
+                        @Html.HiddenFor(model => model.PasswordHash)
+                        @Html.HiddenFor(model => model.SecurityStamp)
+                        @Html.HiddenFor(model => model.Logins)
+                        @Html.HiddenFor(model => model.LockoutEndDateUtc)
+                        @Html.HiddenFor(model => model.LockoutEnabled)
+                        @Html.HiddenFor(model => model.AccessFailedCount)
+                        @Html.HiddenFor(model => model.Claims)
+                        @Html.HiddenFor(model => model.TwoFactorEnabled)
+                        @Html.HiddenFor(model => model.TwoFactorEnabled)
+                        @Html.HiddenFor(model => model.PhoneNumberConfirmed)
+                        @Html.HiddenFor(model => model.EmailConfirmed)
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label " })
+                            <div >
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.School, htmlAttributes: new { @class = "control-label " })
+                            <div >
+                                @Html.EditorFor(model => model.School, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.School, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label " })
+                            <div >
+                                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btnCreate" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="pr-5">
+                    @Html.ActionLink("Back to List", "Index", "admin", new { @class = "btn btnBackTolist" })
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }

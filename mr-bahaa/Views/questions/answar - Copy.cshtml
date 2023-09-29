@@ -1,0 +1,56 @@
+﻿@model mr_bahaa.viewmodel.qviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container mb-4">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-8 mx-auto  ">
+                <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="text-center col-md-12 pt-5">
+                        <p class="con">@Html.DisplayFor(model => model.questions.questiongrade)</p>
+                        <hr />
+
+
+
+                        <div >
+
+                            <img src="@Html.DisplayFor(modelItem =>Model.img.imgurl)" alt="Alternate Text" width="100%" height="300px" />
+                            <div class="con mt-3">
+                             Question :   @Html.DisplayFor(model => model.questions.question)
+
+
+                            </div>
+                        </div>
+                        <dl class="dl-horizontal mt-2">
+
+
+                            <dt class="con mt-4">
+                                @Html.Label("Correct Answar is:")
+                            </dt>
+
+                            <dd >
+                                @Html.DisplayFor(model => model.questions.correct)
+                            </dd>
+                            <dt class="con mt-4">
+                                @Html.DisplayNameFor(model => model.questions.Explanation)
+                            </dt>
+
+                            <dd >
+                                @Html.DisplayFor(model => model.questions.Explanation)
+                            </dd>
+
+
+
+
+                        </dl>
+                    </div>
+                        <p class="text-center">
+                            @Html.ActionLink("Back to Exam", "Details", "exams", new { id = Model.questions.examid, x = 2 }, new { @class = "btn btnCreate" })
+                        </p>
+                    </div>
+</div>
+</div>
+</div>

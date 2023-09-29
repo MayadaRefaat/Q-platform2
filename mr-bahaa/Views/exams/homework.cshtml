@@ -1,0 +1,125 @@
+﻿@model mr_bahaa.viewmodel.questionviewmodel
+
+@{
+    /**/
+
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    label {
+        display: inline
+    }
+</style>
+<div class="container mb-4">
+    <div class="row  ">
+        <div class="">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded" style="width:95%">
+                <div class=" col-md-12 pt-5 d-md-flex">
+                    <div class="col-sm-8">
+
+                        <h3>homework :   @Html.DisplayFor(model => model.exam.name) @Html.DisplayFor(model => model.exam.Date) </h3>
+                        <h3>@ViewBag.text</h3>
+
+                        <h1></h1>
+
+                    </div>
+                   
+                </div>
+                <div class=" ">
+
+                    <div class=" ">
+                        <div class="text-center col-md-12">
+                            @using (Html.BeginForm("homweork", "exams", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal " >
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(Model => Model.exam.examid)
+                                    @{ int x = 0;
+                                        string name = "";
+                                        foreach (var item in Model.questions)
+                                        {
+                                            x++;
+                                            name = Convert.ToString(x);
+
+                                            <div id="@x" style="border:1px solid black;padding:5px">
+
+
+                                                <p class=" center" style="font-size:40px ;margin:auto">
+                                                    <img src="@Html.DisplayFor(modelItem =>item.img.imgurl)" width="100%" />
+
+                                                    <hr>
+                                                    <div class="con" style="width:100%">
+                                                        @Html.DisplayFor(model => item.question.question)
+                                                    </div>
+                                                </p>
+
+                                                <p> </p><p> </p>
+
+
+
+                                                <label class="containerratio">
+                                                    <label>@item.question.first</label>
+
+                                                    <input type="radio" name="@name" value="@item.question.first" required />
+                                                    <span class="checkmarkratio"></span>
+                                                </label>
+                                                <p></p>
+
+
+                                                <label class="containerratio">
+                                                    <label>@item.question.sec</label>
+                                                    @Html.RadioButton(name, item.question.sec)
+                                                    <span class="checkmarkratio"></span>
+                                                </label>
+
+                                                <p></p>
+
+                                                <label class="containerratio">
+                                                    <label>@item.question.third</label>
+                                                    @Html.RadioButton(name, item.question.third)
+                                                    <span class="checkmarkratio"></span>
+                                                </label>
+                                                <p></p>
+
+                                                <label class="containerratio">
+                                                    <label>@item.question.fourth</label>
+                                                    @Html.RadioButton(name, item.question.fourth)
+                                                    <span class="checkmarkratio"></span>
+                                                </label>
+                                            </div>
+                                        }}
+
+
+
+                                </div>
+
+                                <div class="form-group mr-5">
+                                    <div class="col-md-offset-2 mr-5">
+                                        <input type="submit" value="تقديم الاجابه " class="btn btnCreate" />
+                                    </div>
+                                </div>
+                                        }
+                            <div class="ml-5">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

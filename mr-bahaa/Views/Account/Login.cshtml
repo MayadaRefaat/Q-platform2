@@ -1,0 +1,117 @@
+﻿@using mr_bahaa.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+   
+    <style>
+       
+        .loginbtn {
+            display: block;
+            width: 100%;
+            height: 50px;
+            border: none;
+            color: #fff;
+            outline: none;
+            transition: .5s;
+            cursor: pointer;
+            background-size: 200%;
+        }
+
+        .summary {
+            list-style-type: none
+        }
+        hr{border:.5px solid gray;
+               width:100%;
+        }
+        .custome-h2 {
+            display: flex;
+            flex-direction: row;
+        }
+
+            .custome-h2:before,
+            .custome-h2:after {
+                content: "";
+                flex: 1 1;
+                border-bottom: 2px solid #8080805c;
+                margin: auto;
+            }
+    </style>
+    <div class="container" style="padding-top:60px;">
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <div class="card-group">
+                    <div class="card p-2 shadow-lg p-2 mb-5 bg-white rounded">
+                        <div class="card-body">
+                            <h2 class="text-center custome-h2"><pre> Login </pre></h2>
+                         
+                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "  pb-1", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                        <div class="form-group mt-3">
+                            @Html.LabelFor(m => m.Email, new { @class = " control-label" })
+                            <div class="col-sm-12 mt-2">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control",@style="max-width:100%" })
+
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group mt-4">
+                            @Html.LabelFor(m => m.Password, new { @class = " control-label" })
+                            <div class="col-sm-12 mt-2">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control ", @style = "max-width:100%" })
+                            </div>
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger " })
+                                <div class="form-group pt-3">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <div class="checkbox">
+                                            @Html.CheckBoxFor(m => m.RememberMe)
+                                            @Html.LabelFor(m => m.RememberMe)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="submit" value="Log in" class="  btn-dark loginbtn" style="background-color:forestgreen">
+                                <div class="mt-5">
+                                    <p>
+                                        @Html.ActionLink("تسجيل كطالب جديد", "Register")
+                                    </p>
+                                </div>
+                            }
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                          
+
+                            <script>
+                                $(".input").on("focus", function () {
+                                    $(this).addClass("focus");
+                                })
+                                $(".input").on("blur", function () {
+                                    if ($(this).val() == "")
+                                        $(this).removeClass("focus");
+                                })
+                            </script>
+
+
+
+
+                      
+
+
+
+
+

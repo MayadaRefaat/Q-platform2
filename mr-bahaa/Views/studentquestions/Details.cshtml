@@ -1,0 +1,123 @@
+﻿@model mr_bahaa.viewmodel.studentquestionreply
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="container mb-4">
+        <div class="row justify-content-centery">
+            <div class="col-sm-12 col-md-12 col-lg-8 mx-auto  ">
+                <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="text-center col-md-12 pt-3">
+                        <h2 class="card-header mb-3">student's question</h2>
+                        @{
+                            try
+                            {
+                                if (Model.studnetquestionphoto.type.Contains("image"))
+                                {
+                                    <p class=" center" style="font-size:40px ;margin:auto">
+                                        <img src="@Html.DisplayFor(modelItem => Model.studnetquestionphoto.imgurl)" width="50%" height="200px" />
+
+
+                                    </p>
+
+                                }
+                                else if (Model.studnetquestionphoto.type.Contains("video"))
+                                {
+                                    <p class=" center" style="font-size:40px ;margin:auto">
+                                        <video style="width:50%" ; height:200px" controls>
+                                            <source src="@Html.DisplayFor(model=>model.studnetquestionphoto.imgurl)" type="video/mp4">
+                                            <source src="@Html.DisplayFor(model=>model.studnetquestionphoto.imgurl)" type="video/ogg">
+                                            Your browser does not support the video tag.
+                                        </video>
+
+
+                                    </p>
+                                }
+                                else if (Model.studnetquestionphoto.type.Contains("audio"))
+                                {
+                                    <p class=" center" style="font-size:40px ;margin:auto">
+                                        <audio controls>
+                                            <source src="@Html.DisplayFor(model=>model.studnetquestionphoto.imgurl)" type="audio/ogg" width="50%" height="200px">
+                                            Your browser does not support the audio element.
+                                        </audio>
+
+                                    </p>
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+
+                            }
+
+
+                        }                        <div class=" pt-3">
+                            Question : @Html.DisplayFor(model => model.studentquestions.studentquestion, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <hr />
+                        <dt>
+                            Teacher Replay
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.studentquestions.teacherreplay)
+                        </dd>
+
+                        @{
+                            try
+                            {
+                                if (Model.replayphotos.type.Contains("image"))
+                                {
+                                    <p class=" center" style="font-size:40px ;margin:auto">
+                                        <img src="@Html.DisplayFor(modelItem => Model.replayphotos.imgurl)" width="50%" height="200px" />
+
+
+                                    </p>
+
+                                }
+                                else if (Model.replayphotos.type.Contains("video"))
+                                {
+                                    <p class=" center" style="font-size:40px ;margin:auto">
+                                        <video style="width:50%" ; height:200px" controls>
+                                            <source src="@Html.DisplayFor(model=>model.replayphotos.imgurl)" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+
+
+                                    </p>
+                                }
+                                else if (Model.replayphotos.type.Contains("audio"))
+                                {
+                                    <p class=" center" style="font-size:40px ;margin:auto">
+                                        <audio controls>
+                                            <source src="@Html.DisplayFor(model=>model.replayphotos.imgurl)" type="audio/ogg" width="50%" height="200px">
+                                            Your browser does not support the audio element.
+                                        </audio>
+
+                                    </p>
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+
+                            }
+
+
+                        }
+
+
+
+
+
+
+                        <p class="text-center pt-3">
+                            @Html.ActionLink("Back to List", "Index", null, htmlAttributes: new { @class = "btn btnCreate" })
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+                  </div>

@@ -1,0 +1,118 @@
+﻿@model mr_bahaa.viewmodel.ggogleformviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+  
+
+    #rcorners3 {
+        border-radius: 15px 50px;
+        background: #73AD21;
+        padding: 20px;
+        width: 200px;
+        height: 150px;
+    }
+
+   
+</style>
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 col-lg-8 mx-auto  ">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded">
+                <h3>بعد الانتهاء من مراجعه الامتحان اذهب للمحاضره مره اخري لسماع الحصه </h3>
+                @Html.ActionLink("الذهاب للمحاضره ", "details", "lectures", new { id = ViewBag.lectureid }, new { @class = "btn info" })
+
+
+                <h3>هذه الصفحه تعرض بها </h3>
+                <ul>
+                    <li>الامتحان والاجابات الصحيحه</li>
+                    <li>الاجابات التي قمت بحلها </li>
+                    <li>درجتك في الامتحان</li>
+                </ul>                
+                <div id="rcorners3">
+                    @Model.text
+                    <p></p>
+                    (@Model.degree   / @Model.total) درجتك هي
+
+                </div>
+
+                @{
+                    foreach (var item in Model.question)
+                    {
+                        <div class="text-center col-md-12 pt-5" style="border:2px solid black">
+
+                            <hr />
+
+
+
+                            <div>
+
+                                <div class="con mt-3">
+                                    Question :   @Html.DisplayFor(model => item.question)
+
+
+                                </div>
+                            </div>
+                            <dl class="dl-horizontal mt-2">
+
+
+                                <dt class="con mt-4">
+                                    @Html.Label("a:")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.first)
+                                </dd>
+                                <dt class="con mt-4">
+                                    @Html.Label("b:")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.sec)
+                                </dd>
+                                <dt class="con mt-4">
+                                    @Html.Label("c:")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.third)
+                                </dd>
+                                <dt class="con mt-4">
+                                    @Html.Label("d:")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.fourth)
+                                </dd>
+
+                                <dt class="con mt-4">
+                                    @Html.Label("الاجابه الصحيحه هي :")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.correct)
+                                </dd>
+                                <dt class="con mt-4">
+                                    @Html.Label("الاجابه التي اخترتها هي  :")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => item.choise)
+                                </dd>
+
+
+
+
+                            </dl>
+                        </div>
+
+                    }
+                }
+                <p class="text-center">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

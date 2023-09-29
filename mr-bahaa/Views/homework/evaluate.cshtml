@@ -1,0 +1,77 @@
+﻿@model mr_bahaa.viewmodel.evluateview
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center pl-1">
+                    <h4 class="text-center card-header">Evaluate</h4>
+                </div>
+
+                <div>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <hr />
+                        <div class="form-horizontal">
+
+                            @Html.HiddenFor(model=>model.homework.homeworkid)
+                            @Html.HiddenFor(model=>model.student.courseid)
+                            @Html.HiddenFor(model=>model.homework.lectureid)
+
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            @Html.DisplayFor(model => model.student.studentname)
+
+                            @Html.DisplayFor(model => model.homework.lecture.name)
+
+
+                            @{
+                                foreach (var x in Model.imgs)
+                                {
+
+                                    <img src="@Html.DisplayFor(modelItem =>x.imgurl)" alt="" class=" myImg" style="width:100%" height="400px"  >
+
+
+                                }
+                            }
+
+
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.homework.Evaluation, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.homework.Evaluation, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.homework.Evaluation, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group pt-3">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btnCreate" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div>
+                    </div>
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

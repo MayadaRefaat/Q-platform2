@@ -1,0 +1,85 @@
+﻿@model IEnumerable<mr_bahaa.viewmodel.reportresult>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-4">
+    <div class="row justify-content-centery">
+        <div class="col-sm-12 col-md-12 col-lg-12 mx-auto  ">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="p-md-5 ">
+
+                    <p>
+                       @ViewBag.courseone
+
+                    </p>
+                    <p>
+                       ViewBag.courseone
+
+                    </p>
+                    <div class="justify-content-center card-body table-responsive">
+                        <table id="myTable" class="table table-bordered  " style="width:100%">
+                            <thead class="thead-dark ">
+                                <tr class="cell-breakAll" style="font-size:16px">
+                                    <th>
+                                        student's Name
+                                    </th>
+
+
+                                    <th>
+
+                                        phone
+                                    </th>
+
+                                    <th>
+
+                                        phone
+                                    </th>
+                                    <th>
+
+                                        is supscripe one
+                                    </th>
+                                    <th>
+
+                                        is supscripe two    
+                                    </th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.join.Student.studentname)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.join.Student.PhoneNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.join.Student.PhoneNumber)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.join.apporved)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.issub)
+                                        </td>
+
+
+                                      
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

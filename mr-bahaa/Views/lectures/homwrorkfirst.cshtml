@@ -1,0 +1,28 @@
+﻿@model mr_bahaa.Models.exam
+@{
+    ViewBag.Title = "Homework First";
+}
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center pl-5">
+                    <h2 class="p-4">عذرا يجب عليك ان تقوم بحل الواجب اولا </h2>
+                    <h2 class="p-4">للذهاب للواجب اضغط علي  </h2>
+                    @Html.ActionLink("الذهاب للواجب ", "homweork", "exams", new { id = Model.examid }, new { @class = "btn info" })
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

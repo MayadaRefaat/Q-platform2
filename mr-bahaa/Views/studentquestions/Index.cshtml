@@ -1,0 +1,49 @@
+﻿@model IEnumerable<mr_bahaa.viewmodel.teacherviewmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9"><h2>teacher Index</h2> </div>
+            <div class="col-sm-3"><button class="btn btn-success py-2 back"> @Html.ActionLink("Create New", "Create")</button></div>
+        </div>
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+            <h1 class="mb-5">Expert Instructors</h1>
+        </div>
+        <div class="row g-4">
+            @{
+                foreach (var item in Model)
+                {
+
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <a href="~/teachers/teacherquestions/@item.teacher.teacherid"> <img class="img-fluid" src="@item.img.photoulr" alt=""></a>
+
+                            </div>
+                            <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                                <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center p-4">
+                                <h5 class="mb-0">@item.teacher.name</h5>
+                                @Html.ActionLink("view", "teacherquestions", new { teacherid = item.teacher.teacherid }, htmlAttributes: new { @class = "btn danger" })
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+
+        </div>
+    </div>
+</div>

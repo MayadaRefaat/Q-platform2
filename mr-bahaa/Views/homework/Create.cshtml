@@ -1,0 +1,66 @@
+﻿@model mr_bahaa.Models.homework
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center ">
+                    <h2 class="text-center card-header">Create Homework</h2>
+                </div>
+                @using (Html.BeginForm("Create", "homework", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal pl-5">
+                      
+                        <hr />
+
+
+
+
+                        <div class="form-group">
+                            Homework for :
+                            <div class="col-md-10">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                @Html.Label( "اسم المحاضره", htmlAttributes: new { @class = "control-label" })
+                                <div style="padding:0 3px;">
+                                    @Html.DropDownList("lectureid", null, htmlAttributes: new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" control-label col-md-2"">
+
+                            <div class="checkbox">
+
+                                <label for="sec" class=" control-label" style="font-size:15px; font-weight: bold">Upload Image:degree</label>
+                                <div>
+                                    <input type="file" name="files" id="files" multiple style="width: 100%;" required />
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Create" class="btn btnCreate" />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="pr-4">
+                    @Html.ActionLink("Back to List", "Index","homework", new { @class = "btn  btnBackTolist" })
+                </div>
+                </div>
+</div>
+</div>
+</div>

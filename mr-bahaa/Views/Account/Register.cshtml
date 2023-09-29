@@ -1,0 +1,183 @@
+﻿@model mr_bahaa.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<style>
+
+    .loginbtn {
+        display: block;
+        width: 100%;
+        height: 50px;
+        border: none;
+        color: #fff;
+        outline: none;
+        transition: .5s;
+        cursor: pointer;
+        background-size: 200%;
+    }
+
+    .summary {
+        list-style-type: none
+    }
+
+    hr {
+        border: .5px solid gray;
+        width: 100%;
+    }
+
+    .custome-h2 {
+        display: flex;
+        flex-direction: row;
+    }
+
+        .custome-h2:before,
+        .custome-h2:after {
+            content: "";
+            flex: 1 1;
+            border-bottom: 2px solid #8080805c;
+            margin: auto;
+        }
+</style>
+
+            <div class="container" style="padding-top:60px;">
+                <div class="row">
+                    <div class="col-lg-7 mx-auto">
+                        <div class="card-group">
+                            <div class="card p-2 shadow-lg p-2 mb-5 bg-white rounded">
+                                <div class="card-body">
+
+                                    <h2 class="text-center custome-h2"> <pre> Register </pre></h2>
+
+                                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+
+
+
+
+                                    <div class="form-horizontal">
+                                        @Html.ValidationSummary("", new { @class = "text-danger" })                                            <div class="row pl-4 pr-2">
+                                                                                                                                                   <div class="col-md-5">
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.UserName, new { @class = "2 control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.school, new { @class = " control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.TextBoxFor(m => m.school, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.Yourclass, new { @class = " control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.DropDownListFor(Model=>Model.Yourclass, new List<SelectListItem>
+  {
+     new SelectListItem{ Text="الاول الثانوي", Value = "الاول  الثانوي" },
+     new SelectListItem{ Text="الثاني الثانوي", Value = "الثاني الثانوي" },
+     new SelectListItem{ Text="الثالث الثانوي", Value = "الثالث الثانوي" },
+   
+  }, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.Appointment, new { @class = " control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.DropDownListFor(Model=>Model.Appointment, new List<SelectListItem>
+{
+   new SelectListItem{ Text="السبت", Value = "السبت" },
+   new SelectListItem{ Text="الاحد", Value = "الاحد" },
+   new SelectListItem{ Text="الاثنين", Value = "الاثنين" },
+   new SelectListItem{ Text="الثلاثاء", Value = "الثلاثاء" },
+  new SelectListItem{ Text="الاربعاء", Value = "الاربعاء" },
+   new SelectListItem{ Text="الخميس", Value = "الخميس" },
+
+
+
+
+
+
+
+
+                                                                                                                                                          }, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.PhoneNumber, new { @class = " control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.secphonenumber, new { @class = " control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.TextBoxFor(m => m.secphonenumber, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+
+                                                                                                                                                       <div class="form-group">
+                                                                                                                                                           @Html.LabelFor(m => m.Email, new { @class = " control-label" })
+                                                                                                                                                           <div>
+                                                                                                                                                               @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                                                                                                                                           </div>
+                                                                                                                                                       </div>
+
+
+
+                                                                                                                                                   </div>
+
+                                            <div class=" col-md-1 ml-3 d-md-block d-none justify-content-center">
+
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                                    <div>
+                                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = " control-label" })
+                                                    <div>
+                                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                        <div class="form-group mt-2">
+                                            <div class="col-md-offset-2 ">
+
+                                                <span>
+                                                    <input type="submit" value="Register" style="width:100%;height:50px;background-color:forestgreen" class="btn-secondary loginbtn" />
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            

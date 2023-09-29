@@ -1,0 +1,35 @@
+﻿@model IEnumerable<mr_bahaa.Models.coursescategories>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container categoryContainer">
+    <div class="row">
+        <div class="col-sm-9"><h2>Categories Index</h2></div>
+        <div class="col-sm-3"><button class="btn back btn-primary back py-2">@Html.ActionLink("Create New", "Create")</button></div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    <button class="btn btn-info back py-2"> @Html.ActionLink("Edit", "Edit", new { id = item.catigoriesid }) </button>
+                    <button class="btn btn-primary back py-2"> @Html.ActionLink("Details", "Details", new { id = item.catigoriesid }) </button>
+                    <button class="btn btn-danger back py-2"> @Html.ActionLink("Delete", "Delete", new { id = item.catigoriesid })</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

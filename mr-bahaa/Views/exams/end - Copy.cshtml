@@ -1,0 +1,31 @@
+﻿@model mr_bahaa.viewmodel.ggogleformviewmodel
+@{
+    ViewBag.Title = "end exam";
+}
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6  mx-auto justify-content-center">
+            <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded justify-content-center">
+                <div class="justify-content-center pl-5">
+                    <h2 class="p-4"> لقد حللت @Html.DisplayFor(m=>m.degree) صح</h2>
+                    <h2 class="p-4">من مجموع الاسئله @Html.DisplayFor(m=>m.total)</h2>
+                    <h2 class="p-4">يمكنك الان الذهاب للحصه ومشاهده فيدو تصحيح الواجب</h2>
+                    @Html.ActionLink("الذهاب للمحاضره ", "details", "lectures", new { id = ViewBag.lectureid }, new { @class = "btn info" })
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

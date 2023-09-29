@@ -1,0 +1,65 @@
+﻿@model mr_bahaa.Models.subjectcoure
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Create", "subjectcoures", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal container categoryContainer">
+        <h4>Create subjectcoure</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label" })
+                    <div style="padding:0 3px;">
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacherid, "teacherid", htmlAttributes: new { @class = "control-label" })
+                    <div style="padding:0 3px;">
+                        @Html.DropDownList("teacherid", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.teacherid, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.catigoriesid, "catigoriesid", htmlAttributes: new { @class = "control-label" })
+                    <div style="padding:0 3px;">
+                        @Html.DropDownList("catigoriesid", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.catigoriesid, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div>
+                    <label for="first" class=" control-label" style="font-size:15px; font-weight: bold">course Image</label>
+                    <div>
+                        <input type="file" name="files" id="files" multiple style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 py-2">
+                <input type="submit" value="Create" class="btn btn-success py-2" />
+                <button class="btn btn-primary py-2 back"> @Html.ActionLink("Back to List", "Index")</button>
+            </div>
+        </div>
+
+
+
+    </div>
+}
+

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<mr_bahaa.Models.questions>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+    @Html.ActionLink("Create New", "Create", new { @class = "button" })
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.question)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.question)
+        </td>
+        
+        
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", "questions", new { id=item.questionid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.questionid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.questionid })
+        </td>
+    </tr>
+}
+
+</table>

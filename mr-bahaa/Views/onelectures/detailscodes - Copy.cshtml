@@ -1,0 +1,93 @@
+﻿@model mr_bahaa.viewmodel.onelectureviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="">
+            <div class="card shadow p-3 mb-2 bg-gray rounded">
+
+                <h5 class="pt-3 text-center"> @Html.DisplayFor(model => model.onelecture.lecture.name)</h5>
+
+                <hr />
+                
+
+            </div>
+
+        </div>
+
+        <div class="">
+
+
+
+
+
+
+
+
+
+            <div class="card shadow p-3 mb-4 bg-white rounded">
+                <div class="panel panel-default text-left">
+
+
+                    <div class="panel-body  table-responsive">
+
+                        <table class="table table-bordered  " style="width:100%">
+
+                            <thead class="thead-dark ">
+                                <tr class="cell-breakAll" style="font-size:16px">
+                                    <th>
+                                        الخطوات 
+                                    </th>
+                                   
+                                    <th>
+                                        @Html.Label("codes")
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.codes)
+                                {
+                                    <tr class="cell-breakAll">
+
+                                        <td>
+                                            (www.el-muhands.com/onelectures) الرجاء الدخول علي هذا اللينك ثم اختيار الحصه المطلوبه   ثم ادخال الكود 
+
+                                        </td>
+                                        
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.code)
+                                        </td>
+                                       
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+</div>
+

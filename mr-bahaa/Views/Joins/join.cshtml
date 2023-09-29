@@ -1,0 +1,36 @@
+﻿@model mr_bahaa.viewmodel.studentcoursesviewmodel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-3 text-white animated slideInDown">لقد تم ارسال طلبك </h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="~/home/index">Home</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+<!-- 404 Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                <h1 class="display-1">طلب ناجح</h1>
+                <h1 class="mb-4">لقد تم ارسال طلبك للانضمام لهذا الكورس</h1>
+                <p class="mb-4">لقد تم ارسال طلبك الرجاء الاتصال بالدعم الفني لتاكيد عمليه الدفع</p>
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="~/home/index">Go Back To Home</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model mr_bahaa.viewmodel.questionviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container mb-4">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-12 mx-auto  ">
+                <div class="card  my-5 shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="text-center col-md-12 pt-5">
+                        <h3>Exam :     @Html.DisplayFor(model => model.exam.name) @Html.DisplayFor(model => model.exam.Date) </h3>
+                    </div>
+                    <div class="p-5">
+                        <div class="d-flex">
+                            <div>
+                                @Html.ActionLink("Create New question", "Create", "questions", new { examid = Model.exam.examid }, new { @class = "btn btnCreate" })
+                            </div>                          
+
+                        </div>
+                        <div>
+                            <p>
+                                @Html.ActionLink("Edit", "Edit", "exams", new { id = Model.exam.examid }, new { @class = "btn warning" }) |
+                                @Html.ActionLink("Back to Exams", "Index", "exams", new { @class = "btn info" })
+                            </p>
+
+                        </div>
+
+                        <div class="justify-content-center card-body table-responsive">
+
+
+                            <table id="myTable" class="table table-bordered  " style="width:100%">
+                                <thead class="thead-dark">
+                                    <tr class="cell-breakAll" style="font-size:16px">
+                                        <th>
+                                            Questions Name
+                                        </th>
+
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.questions)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.question.question)
+                                            </td>
+
+
+
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", "questions", new { id = item.question.questionid }, new { @class = "btn warning" }) |
+                                                @Html.ActionLink("Details", "Details", "questions", new { id = item.question.questionid }, new { @class = "btn info" }) |
+
+                                                @Html.ActionLink("Delete", "Delete", "questions", new { id = item.question.questionid }, new { @class = "btn danger" })
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                       
+
+
+                    </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+     
+

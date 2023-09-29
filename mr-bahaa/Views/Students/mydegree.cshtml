@@ -1,0 +1,111 @@
+﻿@model mr_bahaa.viewmodel.scoreviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-3 well">
+                <div class="card shadow p-3 mb-2 bg-gray rounded">
+
+                    <img src="@Html.DisplayFor(model=>Model.img)" class="img-circle" style="border-radius:50%" alt="Avatar">
+                    <h5 class="pt-3 text-center"> @Html.DisplayFor(model => model.student.studentname)</h5>
+
+                    <hr />
+                    <p>
+                        <i class="fa fa-home fa-fw" aria-hidden="true"></i>
+                        Overview
+                    </p>
+                    <p>
+                        <i class="fa fa-university fa-fw" aria-hidden="true"></i>
+                        @Html.DisplayFor(model => model.student.school)
+                    </p>
+                    <p><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i>  @Html.DisplayFor(model => model.student.PhoneNumber)</p>
+                    <p><i class="fa fa-phone-square fa-fw" aria-hidden="true"></i>  @Html.DisplayFor(model => model.student.secPhoneNumber)</p>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                
+                <h4 class="pb-3 pt-2 text-center card-header"> درجه الامتحان الاختياري   </h4>
+
+                <div class="card shadow p-3 mb-4 bg-white rounded">
+                    <div class="panel panel-default text-left">
+
+                        <div class="panel-body justify-content-center table-responsive">
+
+                            <table class="table table-bordered  ">
+
+                                <thead class="thead-dark ">
+                                    <tr style="font-size:16px" class="cell-breakAll ">
+
+                                        <th>
+                                            @Html.Label("Name")
+                                        </th>
+                                        <th>
+                                            @Html.Label("points")
+                                        </th>
+                                        <th>
+                                            @Html.Label("total")
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.quesscore)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.name)
+
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.score)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.from)
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+          
+
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+           
+            </div>
+       </div>
+
+       

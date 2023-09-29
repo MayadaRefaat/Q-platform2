@@ -1,0 +1,75 @@
+﻿@model mr_bahaa.viewmodel.subjectcourseviewmodel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container categoryContainer">
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>subjectcoure Details</h4>
+        </div>
+        <div class="col-sm-6">
+            <button class="btn btn-success back py-2">@Html.ActionLink("Create New Lecture", "Create", "lectures", new { id = Model.subjectcoure.subjectcourseid },null)</button>
+            <button class="btn btn-success back py-2">@Html.ActionLink("Create New Exam", "Create", "exams", new { id = Model.subjectcoure.subjectcourseid },null)</button>
+        </div>
+    </div>
+    <hr />
+
+    <div class="dl-horizontal">
+        <div class="row">
+            <div class="col-sm-6"><img src="@Html.DisplayFor(model=>model.img.photoulr)" alt="" style="width:100%;"></div>
+            <div class="col-sm-6">
+                <h2>@Html.DisplayFor(model => model.subjectcoure.name)</h2>
+                <h5>
+                    <i class="fas fa-user px-2" style="color: #38c9d6; font-size:16px;"></i>
+                    <label>Instructor:</label>
+                    <b class="px-2">@Html.DisplayFor(model => model.subjectcoure.teacher.name)</b>
+                </h5>
+                <div>
+                    <p class="px-4">
+                        <label>Category:</label>
+                        <span> @Html.DisplayFor(model => model.subjectcoure.coursescategories.name)</span>
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label><i class="fas fa-keynote"></i>Lectures</label>
+                        <ol>
+                            @{
+                                foreach (var item in Model.lectures)
+                                {
+                                    <li><a href="~/lectures/details/@item.lectureid"> @item.name</a></li>
+                                }
+                            }
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Exams</label>
+                        <ol>
+                            @{
+                                foreach (var item in Model.exams)
+                                {
+                                    <li><a href="~/exams/details/@item.examid"> @item.name</a></li>
+                                }
+                            }
+                        </ol>
+                    </div>
+                </div>
+                <p class="py-3 text-right">
+                    <button class="btn btn-primary py-2 back">  @Html.ActionLink("Edit", "Edit", new { id = Model.subjectcoure.subjectcourseid }) </button>
+                    <button class="btn btn-primary py-2 back">  @Html.ActionLink("Back to List", "Index")</button>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
